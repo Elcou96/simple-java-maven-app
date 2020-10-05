@@ -1,7 +1,9 @@
 pipeline {
-    agent {
-        image 'maven:3-alpine'
-        args '-v /root/.m2:/root/.m2'
+    docker {
+        agent {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
     }
     options {
         skipStagesAfterUnstable ()
